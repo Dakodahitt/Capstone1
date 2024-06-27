@@ -1,0 +1,71 @@
+/* General styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #007bff;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reviews-section, .comments-section {
+  margin-top: 20px;
+}
+
+.reviews-list, .comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.review-item, .comment-item {
+  background-color: #f8f9fa;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .review-item, .comment-item {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.2em;
+  }
+
+  .review-item, .comment-item {
+    padding: 6px;
+  }
+}
