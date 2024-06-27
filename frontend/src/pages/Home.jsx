@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
 
+const URL = 'https://capstone-11.onrender.com';
+
 const Home = () => {
   const [items, setItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/items');
+        const response = await axios.get(`${URL}/items`);
         setItems(response.data);
         setFilteredItems(response.data);
         const categories = [...new Set(response.data.map(item => item.category))];
