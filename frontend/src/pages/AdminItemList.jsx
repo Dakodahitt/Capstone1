@@ -18,7 +18,7 @@ const AdminItemList = () => {
     const fetchItems = async () => {
       try {
         const token = getToken();
-        const response = await axios.get('http://localhost:4000/admin/items', {
+        const response = await axios.get('https://capstone-11.onrender.com/admin/items', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -45,7 +45,7 @@ const AdminItemList = () => {
     e.preventDefault();
     try {
       const token = getToken();
-      const response = await axios.post('http://localhost:4000/admin/items', newItem, {
+      const response = await axios.post('https://capstone-11.onrender.com/admin/items', newItem, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -67,7 +67,7 @@ const AdminItemList = () => {
   const handleDelete = async (id) => {
     try {
       const token = getToken();
-      await axios.delete(`http://localhost:4000/admin/items/${id}`, {
+      await axios.delete(`https://capstone-11.onrender.com/admin/items/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

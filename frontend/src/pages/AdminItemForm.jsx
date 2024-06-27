@@ -19,7 +19,7 @@ const AdminItemForm = ({ fetchItems, item }) => {
     e.preventDefault();
     const token = getToken();
     if (item) {
-      await axios.put(`http://localhost:4000/admin/items/${item.id}`, {
+      await axios.put(`https://capstone-11.onrender.com/admin/items/${item.id}`, {
         title, category, picture,
       }, {
         headers: {
@@ -27,7 +27,7 @@ const AdminItemForm = ({ fetchItems, item }) => {
         },
       });
     } else {
-      await axios.post('http://localhost:4000/admin/items', {
+      await axios.post('https://capstone-11.onrender.com/admin/items', {
         title, category, picture,
       }, {
         headers: {

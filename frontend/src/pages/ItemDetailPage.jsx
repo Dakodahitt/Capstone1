@@ -20,9 +20,9 @@ const ItemDetailPage = () => {
   useEffect(() => {
     const fetchItemAndReviews = async () => {
       try {
-        const itemResponse = await axios.get(`http://localhost:4000/items/${id}`);
+        const itemResponse = await axios.get(`https://capstone-11.onrender.com/items/${id}`);
         setItem(itemResponse.data);
-        const reviewsResponse = await axios.get(`http://localhost:4000/items/${id}/reviews`);
+        const reviewsResponse = await axios.get(`https://capstone-11.onrender.com/items/${id}/reviews`);
         setReviews(reviewsResponse.data);
       } catch (error) {
         console.error('Failed to fetch item and reviews', error);
@@ -42,7 +42,7 @@ const ItemDetailPage = () => {
     e.preventDefault();
     try {
       const token = getToken();
-      const response = await axios.post(`http://localhost:4000/items/${id}/reviews`, newReview, {
+      const response = await axios.post(`https://capstone-11.onrender.com/items/${id}/reviews`, newReview, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -65,7 +65,7 @@ const ItemDetailPage = () => {
     e.preventDefault();
     try {
       const token = getToken();
-      const response = await axios.post(`http://localhost:4000/reviews/${newComment.reviewId}/comments`, newComment, {
+      const response = await axios.post(`https://capstone-11.onrender.com/reviews/${newComment.reviewId}/comments`, newComment, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -88,7 +88,7 @@ const ItemDetailPage = () => {
   const handleDeleteReview = async (reviewId) => {
     try {
       const token = getToken();
-      await axios.delete(`http://localhost:4000/reviews/${reviewId}`, {
+      await axios.delete(`https://capstone-11.onrender.com/reviews/${reviewId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -109,7 +109,7 @@ const ItemDetailPage = () => {
     e.preventDefault();
     try {
       const token = getToken();
-      const response = await axios.put(`http://localhost:4000/reviews/${editingReview.id}`, newReview, {
+      const response = await axios.put(`https://capstone-11.onrender.com/reviews/${editingReview.id}`, newReview, {
         headers: {
           Authorization: `Bearer ${token}`
         }

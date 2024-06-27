@@ -11,7 +11,7 @@ const AdminReviews = () => {
     const fetchReviews = async () => {
       try {
         const token = getToken();
-        const response = await axios.get('http://localhost:4000/admin/reviews', {
+        const response = await axios.get('https://capstone-11.onrender.com/admin/reviews', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -29,7 +29,7 @@ const AdminReviews = () => {
   const handleDelete = async (id) => {
     try {
       const token = getToken();
-      await axios.delete(`http://localhost:4000/admin/reviews/${id}`, {
+      await axios.delete(`https://capstone-11.onrender.com/admin/reviews/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

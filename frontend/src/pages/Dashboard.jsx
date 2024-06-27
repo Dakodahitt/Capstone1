@@ -13,10 +13,10 @@ const Dashboard = () => {
       try {
         const token = getToken();
         const [reviewsResponse, commentsResponse] = await Promise.all([
-          axios.get('http://localhost:4000/reviews', {
+          axios.get('https://capstone-11.onrender.com/reviews', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:4000/comments', {
+          axios.get('https://capstone-11.onrender.com/comments', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

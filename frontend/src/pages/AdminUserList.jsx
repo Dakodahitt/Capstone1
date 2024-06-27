@@ -11,7 +11,7 @@ const AdminUserList = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/admin/users', {
+      const response = await axios.get('https://capstone-11.onrender.com/admin/users', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -24,7 +24,7 @@ const AdminUserList = () => {
 
   const updateUserRole = async (id, role) => {
     try {
-      await axios.put(`http://localhost:4000/admin/users/${id}/role`, { role }, {
+      await axios.put(`https://capstone-11.onrender.com/admin/users/${id}/role`, { role }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -41,7 +41,7 @@ const AdminUserList = () => {
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/admin/users/${id}`, {
+      await axios.delete(`https://capstone-11.onrender.com/admin/users/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

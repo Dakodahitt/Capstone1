@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getToken } from '../services/auth';
 
-const URL = 'https://capstone-11.onrender.com';
-
 const AdminComments = () => {
   const [comments, setComments] = useState([]);
   const [error, setError] = useState('');
@@ -12,7 +10,7 @@ const AdminComments = () => {
     const fetchComments = async () => {
       try {
         const token = getToken();
-        const response = await axios.get(`${URL}/admin/comments`, {
+        const response = await axios.get(`https://capstone-11.onrender.com/admin/comments`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -30,7 +28,7 @@ const AdminComments = () => {
   const handleDelete = async (id) => {
     try {
       const token = getToken();
-      await axios.delete(`${URL}/admin/comments/${id}`, {
+      await axios.delete(`https://capstone-11.onrender.com/admin/comments/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
